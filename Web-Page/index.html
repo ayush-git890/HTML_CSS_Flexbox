@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebPag - Ayush Agarwal</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            font-family: Arial, sans-serif;
+        }
+        header {
+            background: yellowgreen;
+            padding: 1em;
+            text-align: center;
+        }
+        .main-container {
+            display: flex;
+            flex: 1;
+        }
+        .sidebar {
+            background: #333;
+            width: 20%;
+            padding: 1em;
+            display: flex;
+            flex-direction: column;
+        }
+        .sidebar a {
+            color: white;
+            text-decoration: none;
+            padding: 1em;
+            display: block;
+            text-align: center;
+        }
+        .sidebar a:hover {
+            background: #555;
+        }
+        .content {
+            flex: 1;
+            padding: 2em;
+            background: #f4f4f4;
+        }
+        footer {
+            background: yellowgreen;
+            text-align: center;
+            padding: 1em;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to My WebPage</h1>
+    </header>
+    <div class="main-container">
+        <aside class="sidebar">
+            <a href="#" onclick="loadContent('home')">Home</a>
+            <a href="#" onclick="loadContent('about')">About</a>
+            <a href="#" onclick="loadContent('services')">Services</a>
+            <a href="#" onclick="loadContent('contact')">Contact</a>
+        </aside>
+        <div class="content" id="content">Click on the links to change content.</div>
+    </div>
+    <footer>
+        <p>&copy; 2025 Ayush Agarwal</p>
+    </footer>
+    <script>
+        function loadContent(page) {
+            let content = {
+                home: "<h2>Home Page</h2><p>Welcome to the home page.</p>",
+                about: "<h2>About Me</h2><p>Learn more about me here.</p>",
+                services: "<h2>Services</h2><p>Details about services offered.</p>",
+                contact: "<h2>Contact</h2><p>Reach out to us via linkedin.</p>"
+            };
+            document.getElementById("content").innerHTML = content[page];
+        }
+    </script>
+</body>
+</html>
